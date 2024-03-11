@@ -112,7 +112,7 @@ qntsPer = 1; %+N periods (1 = 2pers, 4 = 5pers)
     %first period
     idx_per_selected = periods_idx{rato} >= min(periods_idx{rato}) & periods_idx{rato} <= min(periods_idx{rato}+qntsPer); 
 %     %last periods
-%     idx_per_selected = periods_idx{rato} >= max(periods_idx{rato})-qntsPer & periods_idx{rato} <= max(periods_idx{rato}+1); %penúltimo +1 período
+%     idx_per_selected = periods_idx{rato} >= max(periods_idx{rato})-qntsPer & periods_idx{rato} <= max(periods_idx{rato}+1); %penÃºltimo +1 perÃ­odo
     idx_per_excluir = find(idx_per_selected==0);
 
 %select data
@@ -669,7 +669,6 @@ end
 results = HPC_thetaemgcorr(:,4); open results
 % close all
 
-% arrumar variavel HPC_Bandstate
 
 plotcorr(EMG_meanstate(:,4),squeeze(HPC_meanbandstate(:,2,4)),1,'k')
 
