@@ -1,10 +1,21 @@
+# Hierarchical clustering
+#
+# Hierarchical clustering for exploring patterns 
+# electrophysiological variables
+# 
+# Author: Rafael Naime Ruggiero 2022
+
+# Load required libraries
+
 library(MASS)
 library(tidyverse)
 library(RColorBrewer)
 library(gplots)
 
+# Set working directory
 setwd("C:/Users/Rafael Ruggiero/Documents/Pos Doc/Paper Doc/e-Life/Dados Abertos OSF/Codes")
 
+# Read the dataset
 df <- read.csv2(file ='Mv_matrix.csv',sep = , header=TRUE, na.strings = '..')
 df$Grupo <- as.factor(df$Grupo)  
 
@@ -18,7 +29,7 @@ ind <- sapply(df2, is.numeric)
 df2[ind] <- lapply(df2[ind], scale)
 
 ######################################################################
-#Heatmap
+# Heatmap
 
 cc = c('#99cccc','#99cccc','#99cccc','#99cccc','#99cccc','#99cccc',"#E495A5","#E495A5","#E495A5","#E495A5","#E495A5","#E495A5","#E495A5","#E495A5","#E495A5")
 
@@ -33,10 +44,10 @@ d <- dist(df2, method = "euclidean")
 hc1 <- hclust(d, method = "ward.D" )
 
 
-# transpose the matrix and cluster columns
+# Transpose the matrix and cluster columns
 hc.cols <- hclust(dist(t(mtscaled)))
 
-## draw heatmap 
+## Draw heatmap 
 colMain <- colorRampPalette(brewer.pal(8, "RdBu"))(25)
 heatmap(mtscaled, Rowv=as.dendrogram(hc1), Colv=as.dendrogram(hc.cols), RowSideColors=cc, scale='none', col=rev(colMain))
 
