@@ -1,4 +1,4 @@
-# Canonical Correlation Analsis
+# Canonical Correlation Analysis
 #
 # Script for canonical correlation analysis to investigate the relationship 
 # between behavioral changes and neurobiological variables
