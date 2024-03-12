@@ -1,12 +1,10 @@
 # Hierarchical clustering
 #
-# Hierarchical clustering for exploring patterns 
-# electrophysiological variables
+# Hierarchical clustering to explore patterns of electrophysiological variables
 # 
 # Author: Rafael Naime Ruggiero 2022
 
 # Load required libraries
-
 library(MASS)
 library(tidyverse)
 library(RColorBrewer)
