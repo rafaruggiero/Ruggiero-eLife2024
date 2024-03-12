@@ -1,7 +1,6 @@
 % PCA OF BEHAVIORAL DATA
 % 
 % 
-% Load all tf_data extraced from analysis_lfpstates_rat
 % 
 % Authors: Rafael Naime Ruggiero, 2021 
 
